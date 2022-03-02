@@ -27,3 +27,11 @@ footer {line-height: 50px;background: lightgray;font-size: 12px;padding: 0 50px;
   .book-cover {float: none;margin: 0 auto 40px;display: block;}
   footer {text-align: center;padding: 0 20px;}
 }
+
+
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
