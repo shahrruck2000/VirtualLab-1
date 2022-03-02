@@ -34,4 +34,5 @@ footer {line-height: 50px;background: lightgray;font-size: 12px;padding: 0 50px;
   cursor: not-allowed;
   opacity: 0.5;
   text-decoration: none;
+  pointer-events: none;
 }
