@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Virtual Lab</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- BootStrap 4.0 CDN -->	
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Jquery Google CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- custom css -->
+	<style type="text/css">
+		.navbar-custom
+		{
+			background-color: maroon;
+		}
+		hr{
+  			border: 1px solid purple;
+		}
+	</style>
+
+	<!-- custom Javascript -->
+	
+</head>
+<body>
+
+	<!-- Navbar  --> <!-- bg-custom allows to add custom color to navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-custom navbar-custom">
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    		<a class="navbar-brand" href="#" style="color: white">Load Test on Single Phase Tranformer</a>
+    		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				      <!-- <li class="nav-item active">
+				        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#">Link</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link disabled" href="#">Disabled</a>
+				      </li> -->
+    		</ul>
+    
+  		</div>
+	</nav>
+
+
+
+
+<div class="container">
+
+		<h2 class="mt-5">Documentation</h2>
+		<hr>
+		<!-- jumbotron for validation of meters -->
+		<div class = "jumbotron mt-5 pt-0 pl-0 pr-0">
+				<nav class="navbar navbar-light bg-dark">
+	  				<span class="navbar-brand mb-0 h1" style="color:white">Circuit Explanation</span>
+				</nav>
+
+			<!-- Input field for Supply -->
+			<div class="container m-3">
+				<img  style="max-width: 1000px; max-height: 900px;margin-left:2%" src="documentation circuit.png">
+			</div>
+		</div>
+
+		<div class = "jumbotron mt-5 pt-0 pl-0 pr-0">
+				<nav class="navbar navbar-light bg-dark">
+	  				<span class="navbar-brand mb-0 h1" style="color:white">Instructions</span>
+				</nav>
+
+			<!-- Input field for Supply -->
+			<div class="container m-3">
+				<ol style="font-size: 22px">
+               <li>To Enable the ON button set the <b>fixing ratio</b> and <b>KVA rating</b> of the transformer using dropdowns</li>
+               <li>To Enable the DPSTS button switch on the power supply(Uisng <b>ON</b> button></li>
+               <li>To Enable the primary rheostat turn on the <b>DPSTS(CheckButton on primary side)</b>.</li>
+               <li>To enable the load variac set the rated voltage on primary side using rheostat(slider on primary side).</li>
+               <li>To save the reading click the <b>save the data</b> button</li>
+               <li>After completing the experiment click the <b>Go to table</b> button to view table</li>
+           </ol>
+			</div>
+		</div>
+
+
+		<div class = "jumbotron mt-5 pt-0 pl-0 pr-0">
+				<nav class="navbar navbar-light bg-dark">
+	  				<span class="navbar-brand mb-0 h1" style="color:white">Tabulation-Calculations</span>
+				</nav>
+
+			<!-- Input field for Supply -->
+			<div class="container m-3">
+				<img  style="max-width: 1000px; max-height: 900px;margin-left:2%" src="documentation table.png">
+			</div>
+		</div>
+
+
+		<div class = "jumbotron mt-5 pt-0 pl-0 pr-0">
+				<nav class="navbar navbar-light bg-dark">
+	  				<span class="navbar-brand mb-0 h1" style="color:white">Instructions</span>
+				</nav>
+
+			<!-- Input field for Supply -->
+			<div class="container m-3">
+			<ol style="font-size: 22px">
+               <li>Click the <b>Generate</b> button to generate the tables with saved values </li>
+               <li>Enter the calculated Efficency and Regulation value in respective column</li>
+               <li>To cross check you calculated value with system click the <b>Check</b> button</li>
+               <li>If your values are correct you will receive a congratulation message or else you will get a warning message</li>
+           </ol>
+			</div>
+		</div>
+		<!--<button style = "float:right;" class="btn btn-primary m-1">Simulation</button>-->
+        <a style = "float:right;" class="btn btn-primary m-1" href="https://shahrruck.itch.io/virtual-lab-version-1">Simulation</a>
+
+
+<!--  -->
+
+<!-- Modal -->
+
+
+
+
+</div> <!-- div for the whole body container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap CDN -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCrE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

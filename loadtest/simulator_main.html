@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="author" content="Maniraj">
+    <title>Load test on single phase transformer</title>
+  <link rel="stylesheet" href="machine_styles.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Jquery Google CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- custom css -->
+  <style type="text/css">
+    h1{text-align: center;}
+
+    .navbar-custom
+    {
+      background-color: maroon;
+    }
+  </style>
+
+  <!-- custom Javascript -->
+  <script type="text/javascript">
+
+
+    //This function is used to bootstrap modal after form submission
+    function openModal(error,comments) {
+      var modalbody = document.getElementById("modal-body-content");
+      var modaltitle = document.getElementById("exampleModalLabel");
+      var nextbutton_of_modal = document.getElementById("modalnextbtn");
+
+          document.getElementById("backdrop").style.display = "block"
+          document.getElementById("exampleModal").style.display = "block"
+          document.getElementById("exampleModal").classList.add("show")
+
+          if(error == "No_error")
+          {
+            modaltitle.innerHTML = "<strong>" + comments + "</strong>"
+            modalbody.innerHTML = "<strong> Now you can proceed to the next section by next button below </strong>";
+            nextbutton_of_modal.style.display = "block"
+
+          }else{
+            modaltitle.innerHTML = "<strong>" + comments + "</strong>";
+            modalbody.innerHTML = "Kindly check the <strong>" + error + " Rating </strong> and try again !!";
+            nextbutton_of_modal.style.display = "none"
+          }
+            
+
+        
+    }
+
+    function closeModal() {
+        document.getElementById("backdrop").style.display = "none"
+        document.getElementById("exampleModal").style.display = "none"
+        document.getElementById("exampleModal").classList.remove("show")
+    }
+      // function to check whether the componenets/apparatus selected by the user is suitable for the experiment or not
+    function componentsCheck()
+    {
+      var expname = document.getElementById("name_of_exp").value;
+      var load = document.getElementById("load_type").value;
+      var supply = document.getElementById("supplylabel").value;
+      var voltmeter = document.getElementById("voltlabel").value;
+      var wattmeter = document.getElementById("wattlabel").value;
+      var ammeter = document.getElementById("ammeterlabel").value;
+      var devices = document.getElementById("deviceslabel").value;
+      var isCorrect = true;
+      if(expname == "Single Phase Transformer")
+      {
+        if(load == "Resistive Load")
+        {
+          if(supply != "AC Supply")
+          {
+            componentsWarning("Supply" , "Warning");
+          }else if(voltmeter != "Voltmeter (0 - 300 V)")
+          {
+            componentsWarning("Voltmeter", "Warning");
+          }else if(wattmeter != "Wattmeter (300 V / 50 A)")
+          {
+            componentsWarning("Wattmeter", "Warning");
+          }else if(devices != "Transformer 1 Phase 5 KVA")
+          {
+            componentsWarning("Transformer", "Warning");
+          }else if(ammeter != "Ammeter (0 - 50 A)")
+          {
+            componentsWarning("Ammeter", "Warning");
+          }else{
+            componentsWarning("No_error","Congratulations !!! ")
+          }
+        }
+
+      }else{
+        alert(expname);
+      }
+
+    }
+
+    //this redirects to openModal function
+    function componentsWarning(error,comments)
+    {
+      openModal(error,comments);
+    }
+
+
+
+
+
+
+  </script>
+    
+  </head><body>
+    <nav><h1>Load Test on Single Phase Transformer</h1></nav>
+
+   <ul>
+  <li><a href="aim.html">Aim</a></li>
+  <li><a href="apparatus.html">Apparatus Used</a></li>
+ <li><a href="theory.html">Theory</a></li>
+  <li><a href="procedure.html">Procedure</a></li>
+  <li><a href="formulae.html">Formulae and Model graph</a></li>
+  <li><a class="active" href="simulator_main.html">Simulator</a></li>
+  <li><a href="quiz.html">Quiz</a></li>
+</ul>
+
+
+<div class="container" style="margin-left:25%;max-width:1000px">
+
+    <!-- jumbotron for validation of meters -->
+    <div class = "jumbotron mt-5 pt-0 pl-0 pr-0">
+        <nav class="navbar navbar-light bg-dark">
+            <span class="navbar-brand mb-0 h1" style="color:white">Selection of Components</span>
+        </nav>
+      
+
+      <!-- Input field for Supply -->
+      <div class="container m-3">
+        <form action="#">
+
+          <div class = "form-row">
+            <div class="col-md-6 mb-3">
+              <label for="name_of_exp"><strong>Name of the experiment</strong></label>
+                    <select class="form-control" id="name_of_exp">
+                    <option>Select</option>
+                    <option value = "Single Phase Transformer">Single Phase Transformer</option>
+                    <option value="DC Series Generator">DC Series Generator</option>
+                  </select>
+              </div>
+
+              <div class="col-md-4 mb-3">
+              <label for="load_type"><strong>Type of Load</strong></label>
+                    <select class="form-control" id="load_type" required>
+                    <option>Select</option>
+                    <option value="Resistive Load">Resistive Load</option>
+                    <option value="Resistive and Inductive Load">Resistive and Inductive Load</option>
+                    <option value="Resistive and Capacitive Load">Resistive and Capacitive Load</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class = "form-row">
+            <div class = "col-md-3 mb-3">
+              <label for="supplylabel"><strong>Select the type of Supply</strong></label>
+                  <select class="form-control" id="supplylabel">
+                    <option>Select</option>
+                      <option value="AC Supply">AC Supply (230 V, 50HZ AC) </option>
+                      <option value = "DC Supply">DC Supply</option>
+                  </select>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <label for="wattlabel"><strong>Wattmeter</strong></label>
+                  <select class="form-control" id="wattlabel">
+                    <option>Select</option>
+                      <option value="Wattmeter (300 V / 50 A)">Wattmeter (300 V / 50 A) </option>
+                      <option value="Wattmeter (300 V / 5 A)">Wattmeter (300 V / 5 A) </option>
+                     <option value="Wattmeter (50 V / 20 A)">Wattmeter (50 V / 20 A) </option>
+                  </select>
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <label for="voltlabel"><strong>Voltmeter</strong></label>
+                  <select class="form-control" id="voltlabel">
+                    <option>Select</option>
+                      <option value="Voltmeter (0 - 300 V)">Voltmeter (0 - 300 V) </option>
+                      <option value="Voltmeter (0 - 50V V)">Voltmeter (0 - 50V V) </option>
+                      <option value="Voltmeter (0 - 30 V)">Voltmeter (0 - 30 V) </option>
+                  </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="ammeterlabel"><strong>Ammeter</strong></label>
+                  <select class="form-control" id="ammeterlabel">
+                    <option>Select</option>
+                    <option value="Ammeter (0 - 50 A)">Ammeter (0 - 50 A) </option>
+                    <option value="Ammeter (0 - 25 A)">Ammeter (0 - 25 A) </option>
+                    <option value="Ammeter (0 - 5 A)">Ammeter (0 - 5 A) </option>
+                  </select>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="deviceslabel"><strong>Devices</strong></label>
+                  <select class="form-control" id="deviceslabel">
+                    <option>Select</option>
+                      <option value="Transformer 1 Phase 5 KVA">Transformer 1 Phase 5 KVA (250 V / 250 V) </option>
+                  </select>
+            </div>
+          </div>
+          <button onclick = "componentsCheck()" class="btn btn-primary m-1">Check</button>
+        </form>
+      </div>
+
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true"
+    role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="color: red;"></h5>
+                <button type="button" class="close" aria-label="Close" onclick="closeModal()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body-content">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
+               <!-- <button type="button" class="btn btn-success show"  onclick="n.html" id = "modalnextbtn">
+
+                Next</button>-->
+                <a class="btn btn-success" href="documentation.html">Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+<!-- Modal -->
+
+
+
+
+</div>
+
+
+
+    </body></html>
